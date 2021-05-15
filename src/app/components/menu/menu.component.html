@@ -1,1 +1,8 @@
-<p>menu works!</p>
+<div class="menu">
+  <span class="menu__option" *ngFor="let option of options; last as isLast">
+    <div class="menu__option-text">
+      {{ option.name }}
+    </div>
+    <div *ngIf="!isLast" class="menu__option-separator"></div>
+  </span>
+</div>

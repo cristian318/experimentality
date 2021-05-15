@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 100px;
+  line-height: 66px;
+  &__option {
+    display: flex;
+    font-weight: bold;
+    font-size: 34px;
+    &-text {
+      padding: 0 30px;
+    }
+    &-separator {
+      height: 66px;
+      width: 1px;
+      background-color: white;
+    }
+  }
+}
