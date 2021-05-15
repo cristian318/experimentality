@@ -11,6 +11,7 @@ import { StaticContentComponent } from './components/static-content/static-conte
 import { MenuComponent } from './components/menu/menu.component';
 import { MostWantedProductsComponent } from './components/most-wanted-products/most-wanted-products.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,11 @@ import { SearchComponent } from './components/search/search.component';
     StaticContentComponent,
     MenuComponent,
     MostWantedProductsComponent,
-    SearchComponent
+    SearchComponent,
+    SearchInputComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

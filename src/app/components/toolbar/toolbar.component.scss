@@ -7,10 +7,28 @@
   display: flex;
   flex: none;
   flex-direction: column;
+  &__buttons-rigth {
+    display: flex;
+    .btn {
+      img {
+        height: 54px;
+        margin-right: 20px;
+      }
+      font-size: 29px;
+      align-items: center;
+    }
+  }
   &__top {
     height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 65px;
   }
   &__bottom {
     height: 100px;
+  }
+  &__logo {
+    width: 446px;
   }
 }
