@@ -1,1 +1,16 @@
-<p>static-content works!</p>
+<div class="static-content">
+  <div class="static-content__carrousel">
+    <swiper [pagination]="true" [navigation]="true" class="mySwiper">
+      <ng-template swiperSlide
+        ><img src="/assets/images/banner-principal.jpg" alt="moda_infantil"
+      /></ng-template>
+      <ng-template swiperSlide
+        ><img src="/assets/images/banner-principal.jpg" alt="moda_infantil"
+      /></ng-template>
+    </swiper>
+  </div>
+  <div class="static-content__images">
+    <img src="/assets/images/banner-moda-infantil.jpg" alt="moda_infantil" />
+    <img src="/assets/images/banner-deportivo.jpg" alt="moda_deportivo" />
+  </div>
+</div>

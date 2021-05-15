@@ -13,6 +13,8 @@ import { MostWantedProductsComponent } from './components/most-wanted-products/m
 import { SearchComponent } from './components/search/search.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 
+import { SwiperModule } from 'swiper/angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
     SearchComponent,
     SearchInputComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, SwiperModule],
   providers: [],
   bootstrap: [AppComponent],
 })
