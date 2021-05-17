@@ -1,1 +1,10 @@
-<p>search works!</p>
+<div class="search">
+  <div><a href="#">Back to home</a></div>
+  <div class="search__products">
+    <app-product
+      class="search__product"
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product>
+  </div>
+</div>

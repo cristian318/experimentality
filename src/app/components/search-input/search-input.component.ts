@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { RouterService } from 'src/app/services/router.service';
 
 @Component({
   selector: 'app-search-input',
@@ -9,19 +9,11 @@ import { ProductService } from 'src/app/services/product.service';
 export class SearchInputComponent implements OnInit {
   valueInput: string = '';
 
-  constructor(private productService: ProductService) {}
+  constructor(private routerService: RouterService) {}
 
   ngOnInit(): void {}
 
   search(): void {
-    console.log('search:', this.valueInput);
-    this.productService.searchProducts(this.valueInput, 'MCO1430').subscribe(
-      (data) => {
-        console.log(data);
-      },
-      (err) => {
-        console.log(err, 'error :(');
-      }
-    );
+    this.routerService.goto('/search', { q: this.valueInput });
   }
 }
