@@ -47,6 +47,12 @@
       max-width: 100%;
     }
   }
+  &__image-mobile {
+    display: flex !important;
+  }
+  &__image-desktop {
+    display: none !important;
+  }
 }
 
 @media only screen and (min-width: $breakpoint) {
@@ -55,6 +61,12 @@
       img:last-child {
         margin-left: 56px;
       }
+    }
+    &__image-mobile {
+      display: none !important;
+    }
+    &__image-desktop {
+      display: flex !important;
     }
   }
 }
