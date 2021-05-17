@@ -1,6 +1,7 @@
 @import "~swiper/swiper";
 @import "~swiper/components/navigation/navigation";
 @import "~swiper/components/pagination/pagination";
+@import "../../../vars";
 
 .swiper-container {
   width: 100%;
@@ -42,8 +43,18 @@
   }
   &__images {
     margin: 90px;
-    img:last-child {
-      margin-left: 56px;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $breakpoint) {
+  .static-content {
+    &__images {
+      img:last-child {
+        margin-left: 56px;
+      }
     }
   }
 }
