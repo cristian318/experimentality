@@ -1,21 +1,27 @@
 <div class="footer">
   <div class="footer__top">
-    <div>
-      <span class="footer__title">POLÍTICAS</span>
+    <div class="footer__top-item footer__top-item--hide">
+      <span class="footer__title" (click)="toggleShow($event)"
+        >POLÍTICAS <span class="footer__title-plus">+</span></span
+      >
       <a href="#">Políticas de privacidad</a>
       <a href="#">Políticas de cambio</a>
       <a href="#">Políticas de envío</a>
       <a href="#">Términos y condiciones</a>
       <a href="#">Responsabilidad social</a>
     </div>
-    <div>
-      <span class="footer__title">SOBRE NOSOTROS</span>
+    <div class="footer__top-item footer__top-item--hide">
+      <span class="footer__title" (click)="toggleShow($event)"
+        >SOBRE NOSOTROS<span class="footer__title-plus">+</span></span
+      >
       <a href="#">Encuentra tu tienda</a>
       <a href="#">Contáctanos</a>
       <a href="#">Trabaja con nostros</a>
     </div>
-    <div>
-      <span class="footer__title">SÍGUENOS EN:</span>
+    <div class="footer__top-item footer__top-item--hide">
+      <span class="footer__title" (click)="toggleShow($event)"
+        >SÍGUENOS EN:<span class="footer__title-plus">+</span></span
+      >
       <div class="footer__social">
         <img src="/assets/images/icon-facebook.svg" alt="facebook" />
         <img src="/assets/images/icon-twitter.svg" alt="facebook" />
