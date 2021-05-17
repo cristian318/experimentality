@@ -1,6 +1,6 @@
 <div class="toolbar">
   <div class="toolbar__top">
-    <span class="toolbar__menu-icon">
+    <span class="toolbar__menu-icon" (click)="setShowMenu(true)">
       <img src="/assets/images/icon-menu.svg" alt="logo" />
     </span>
     <a href="#" class="toolbar__logo">
@@ -17,6 +17,9 @@
     </div>
   </div>
   <div class="toolbar__bottom">
-    <app-menu></app-menu>
+    <app-menu
+      [showMenu]="showMenu"
+      (closeEvent)="setShowMenu($event)"
+    ></app-menu>
   </div>
 </div>

@@ -5,4 +5,20 @@
     </div>
     <div *ngIf="!isLast" class="menu__option-separator"></div>
   </span>
+  <div class="menu__sidebar" *ngIf="showMenu">
+    <div class="menu__sidebar-close">
+      <button class="btn" (click)="close()">
+        <img src="/assets/images/icon-close.svg" alt="" />
+      </button>
+    </div>
+    <div class="menu__sidebar-options">
+      <div
+        class="menu__sidebar-option"
+        *ngFor="let option of options; last as isLast"
+      >
+        {{ option.name }}
+      </div>
+    </div>
+  </div>
+  <div class="menu__backdrop" *ngIf="showMenu" (click)="close()"></div>
 </div>

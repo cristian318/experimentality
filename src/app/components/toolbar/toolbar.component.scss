@@ -39,7 +39,8 @@
     margin: 0 42px;
   }
   &__bottom {
-    display: none;
+    display: block;
+    height: 0px;
   }
   &__logo {
     display: flex;
