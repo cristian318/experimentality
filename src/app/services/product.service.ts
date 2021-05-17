@@ -7,11 +7,11 @@ import { HttpServiceService } from './http-service.service';
 export class ProductService {
   constructor(private httpService: HttpServiceService) {}
 
-  test() {
-    const data: any = {
-      category: 'MCO1430',
-      q: 'nike',
+  searchProducts(query: string, category: string = '') {
+    const params: any = {
+      category,
+      q: query,
     };
-    return this.httpService.makeGet('/sites/MCO/search', data);
+    return this.httpService.makeGet('/sites/MCO/search', params);
   }
 }

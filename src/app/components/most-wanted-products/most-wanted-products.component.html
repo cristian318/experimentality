@@ -6,23 +6,8 @@
     [navigation]="true"
     class="mv-products__carrousel"
   >
-    <ng-template swiperSlide>
-      <app-product></app-product>
-    </ng-template>
-    <ng-template swiperSlide>
-      <app-product></app-product>
-    </ng-template>
-    <ng-template swiperSlide>
-      <app-product></app-product>
-    </ng-template>
-    <ng-template swiperSlide>
-      <app-product></app-product>
-    </ng-template>
-    <ng-template swiperSlide>
-      <app-product></app-product>
-    </ng-template>
-    <ng-template swiperSlide>
-      <app-product></app-product>
+    <ng-template swiperSlide *ngFor="let product of products">
+      <app-product [product]="product"></app-product>
     </ng-template>
   </swiper>
 </div>

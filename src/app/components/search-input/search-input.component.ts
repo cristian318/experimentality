@@ -15,7 +15,7 @@ export class SearchInputComponent implements OnInit {
 
   search(): void {
     console.log('search:', this.valueInput);
-    this.productService.test().subscribe(
+    this.productService.searchProducts(this.valueInput, 'MCO1430').subscribe(
       (data) => {
         console.log(data);
       },
