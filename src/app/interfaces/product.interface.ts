@@ -5,4 +5,5 @@ export interface product {
   thumbnail: string;
   id: string;
   discount?: number;
+  inCart?: boolean;
 }

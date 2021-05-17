@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { product } from 'src/app/interfaces/product.interface';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -8,11 +10,34 @@ import { Component, OnInit } from '@angular/core';
 export class ToolbarComponent implements OnInit {
   showMenu = false;
 
-  constructor() {}
+  countCart = 0;
 
-  ngOnInit(): void {}
+  cartObserver: any;
+
+  constructor(private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.init();
+  }
+
+  ngOnDestroy(): void {
+    if (this.cartObserver) {
+      this.cartObserver.unsuscribe();
+    }
+  }
 
   setShowMenu(value: boolean) {
     this.showMenu = value;
+  }
+
+  init() {
+    this.getCountCart(this.cartService.cart);
+    this.cartObserver = this.cartService.cartS.subscribe((val) => {
+      this.getCountCart(val);
+    });
+  }
+
+  getCountCart(cart: product[]) {
+    this.countCart = cart.length;
   }
 }

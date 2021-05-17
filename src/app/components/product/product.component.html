@@ -17,4 +17,9 @@
       {{ product.price | currency: "COP":"symbol-narrow":"3.0" }}
     </div>
   </div>
+  <div class="product__button">
+    <button class="btn" (click)="toggleCart()">
+      {{ product.inCart ? "Eliminar del carrito" : "Agregar al carrito" }}
+    </button>
+  </div>
 </div>

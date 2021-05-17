@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { product } from 'src/app/interfaces/product.interface';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +10,9 @@ import { product } from 'src/app/interfaces/product.interface';
 export class ProductComponent implements OnInit {
   @Input() product: product;
 
-  constructor() {
+  cartObserver: any;
+
+  constructor(private cartService: CartService) {
     this.product = {
       title: 'default title',
       price: 0,
@@ -17,6 +20,7 @@ export class ProductComponent implements OnInit {
       thumbnail: '',
       id: '',
       discount: 0,
+      inCart: false,
     };
   }
 
@@ -25,6 +29,14 @@ export class ProductComponent implements OnInit {
       this.product.original_price || 0,
       this.product.price
     );
+    this.getCart();
+    this.init();
+  }
+
+  ngOnDestroy(): void {
+    if (this.cartObserver) {
+      this.cartObserver.unsuscribe();
+    }
   }
 
   getPercentageChange(oldNumber: number, newNumber: number) {
@@ -34,5 +46,34 @@ export class ProductComponent implements OnInit {
     var decreaseValue = oldNumber - newNumber;
 
     return Math.trunc((decreaseValue / oldNumber) * 100);
+  }
+
+  addToCart() {
+    this.cartService.addToCart(this.product);
+  }
+
+  removeToCart() {
+    this.cartService.removeToCart(this.product);
+  }
+
+  toggleCart() {
+    if (this.product.inCart) {
+      this.removeToCart();
+    } else {
+      this.addToCart();
+    }
+  }
+
+  getCart() {
+    this.product.inCart = this.cartService.includes(
+      this.cartService.cart,
+      this.product
+    );
+  }
+
+  init() {
+    this.cartObserver = this.cartService.cartS.subscribe(() => {
+      this.getCart();
+    });
   }
 }

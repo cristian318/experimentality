@@ -45,4 +45,16 @@
       text-align: right;
     }
   }
+  &__button {
+    margin-top: 10px;
+    .btn {
+      width: 100%;
+      border: 1px solid black;
+      border-radius: 5px;
+      height: 36px;
+      font-size: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
