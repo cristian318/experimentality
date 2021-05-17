@@ -1,11 +1,6 @@
 <div class="mv-products">
   <span class="mv-products__title">PRODUCTOS MÁS BUSCADOS</span>
-  <swiper
-    [slidesPerView]="4"
-    [spaceBetween]="30"
-    [navigation]="true"
-    class="mv-products__carrousel"
-  >
+  <swiper [config]="config" class="mv-products__carrousel">
     <ng-template swiperSlide *ngFor="let product of products">
       <app-product [product]="product"></app-product>
     </ng-template>

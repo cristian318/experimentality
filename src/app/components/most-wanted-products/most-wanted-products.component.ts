@@ -20,6 +20,19 @@ export class MostWantedProductsComponent implements OnInit {
 
   tries = 0;
 
+  config = {
+    spaceBetween: 30,
+    navigation: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      769: {
+        slidesPerView: 4,
+      },
+    },
+  };
+
   constructor(private productService: ProductService) {
     this.products = [];
   }
