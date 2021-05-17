@@ -1,6 +1,11 @@
 <div class="search-input">
-  <input type="text" placeholder="Buscar aquí producto" />
-  <button class="btn search-input__icon">
+  <input
+    type="text"
+    placeholder="Buscar aquí producto"
+    [(ngModel)]="valueInput"
+    #ctrl="ngModel"
+  />
+  <button class="btn search-input__icon" (click)="search()">
     <img src="/assets/images/icon-search.svg" alt="search" />
   </button>
 </div>

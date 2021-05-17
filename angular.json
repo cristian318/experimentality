@@ -75,7 +75,8 @@
               "browserTarget": "experimentality:build:production"
             },
             "development": {
-              "browserTarget": "experimentality:build:development"
+              "browserTarget": "experimentality:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
