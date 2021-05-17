@@ -1,3 +1,4 @@
+@import "../../../vars";
 .toolbar {
   position: absolute;
   top: 0;
@@ -8,6 +9,14 @@
   display: flex;
   flex: none;
   flex-direction: column;
+  &__menu-icon {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+  }
   &__buttons-rigth {
     display: flex;
     .btn {
@@ -18,19 +27,48 @@
       font-size: 29px;
       align-items: center;
     }
+    .btn-login {
+      display: none;
+    }
   }
   &__top {
     height: 135px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0 65px;
+    margin: 0 42px;
   }
   &__bottom {
-    height: 100px;
+    display: none;
   }
   &__logo {
     display: flex;
-    width: 446px;
+    flex: none;
+    width: 367px;
+    height: 78px;
+  }
+}
+
+@media only screen and (min-width: $breakpoint) {
+  .toolbar {
+    &__top {
+      margin: 0 65px;
+    }
+    &__menu-icon {
+      display: none;
+    }
+    &__buttons-rigth {
+      .btn-login {
+        display: flex;
+      }
+    }
+    &__bottom {
+      display: block;
+      height: 100px;
+    }
+    &__logo {
+      width: 446px;
+      height: 95px;
+    }
   }
 }

@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./vars.scss";
 
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
 }
 .content {
-  margin-top: 235px;
+  margin-top: 135px;
 }
 
 .btn {
@@ -13,4 +14,10 @@ body {
   background-color: transparent;
   border: 0px;
   display: flex;
+}
+
+@media only screen and (min-width: $breakpoint) {
+  .content {
+    margin-top: 235px;
+  }
 }
