@@ -16,6 +16,10 @@ SwiperCore.use([Pagination]);
 export class MostWantedProductsComponent implements OnInit {
   products: product[];
 
+  maxTries = 10;
+
+  tries = 0;
+
   constructor(private productService: ProductService) {
     this.products = [];
   }
@@ -32,6 +36,10 @@ export class MostWantedProductsComponent implements OnInit {
         this.products = [];
         if ('results' in data) {
           this.products = data.results;
+        }
+        if (this.products.length === 0 && this.tries <= this.maxTries) {
+          this.tries += 1;
+          this.getRandomProducts();
         }
       },
       (err) => {
