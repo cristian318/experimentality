@@ -108,5 +108,13 @@
       }
     }
   },
-  "defaultProject": "experimentality"
+  "defaultProject": "experimentality",
+  "budgets": [
+    {
+        "type": "bundle",
+        "name": "main",
+        "maximumWarning": "2mb",
+        "maximumError": "5mb"
+    }
+  ]
 }
