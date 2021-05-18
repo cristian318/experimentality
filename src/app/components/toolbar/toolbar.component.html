@@ -8,9 +8,11 @@
     </a>
     <app-search-input></app-search-input>
     <div class="toolbar__buttons-rigth">
-      <button class="btn" (click)="setShowCart(true)">
-        {{ countCart }}
+      <button class="btn toolbar__btn-cart" (click)="setShowCart(true)">
         <img src="/assets/images/icon-cart.svg" alt="cart" />
+        <div class="toolbar__cart-counter">
+          {{ countCart }}
+        </div>
       </button>
       <button class="btn btn-login">
         <img src="/assets/images/icon-user.svg" alt="user" /> Iniciar sesión

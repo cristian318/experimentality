@@ -11,9 +11,19 @@ export class SearchInputComponent implements OnInit {
 
   constructor(private routerService: RouterService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.init();
+  }
 
   search(): void {
     this.routerService.goto('/search', { q: this.valueInput });
+  }
+
+  init() {
+    this.routerService.getParams().subscribe((params) => {
+      if ('q' in params) {
+        this.valueInput = params.q;
+      }
+    });
   }
 }

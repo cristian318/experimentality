@@ -9,6 +9,23 @@
   display: flex;
   flex: none;
   flex-direction: column;
+  &__btn-cart {
+    display: flex;
+    position: relative;
+  }
+  &__cart-counter {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
   &__menu-icon {
     display: flex;
     flex: none;
