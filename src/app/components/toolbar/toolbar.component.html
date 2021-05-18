@@ -8,7 +8,7 @@
     </a>
     <app-search-input></app-search-input>
     <div class="toolbar__buttons-rigth">
-      <button class="btn">
+      <button class="btn" (click)="setShowCart(true)">
         {{ countCart }}
         <img src="/assets/images/icon-cart.svg" alt="cart" />
       </button>
@@ -23,4 +23,5 @@
       (closeEvent)="setShowMenu($event)"
     ></app-menu>
   </div>
+  <app-cart [show]="showCart" (closeEvent)="setShowCart($event)"></app-cart>
 </div>

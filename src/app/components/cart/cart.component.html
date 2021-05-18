@@ -1,0 +1,36 @@
+<div class="cart" *ngIf="show">
+  <div class="cart__close">
+    <button class="btn" (click)="close()">
+      <img src="/assets/images/icon-close.svg" alt="" />
+    </button>
+  </div>
+  <div class="cart__products">
+    <div class="cart__product" *ngFor="let product of products">
+      <div class="cart__product-image">
+        <img [src]="product.thumbnail" alt="product" />
+      </div>
+      <div class="cart__product-content">
+        <div class="cart__product-title">
+          {{ product.title }}
+        </div>
+        <div class="cart__product-price">
+          {{ product.price | currency: "COP":"symbol-narrow":"3.0" }}
+        </div>
+        <div class="cart__product-delete">
+          <button class="btn" (click)="delete(product)">
+            Eliminar del carrito
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cart__no-data" *ngIf="products.length === 0">
+      No hay productos en el carrito
+    </div>
+  </div>
+  <div class="cart__total">
+    <span class="cart__total-text"
+      >Total: {{ total | currency: "COP":"symbol-narrow":"3.0" }}</span
+    >
+    <button class="btn">Continuar compra</button>
+  </div>
+</div>

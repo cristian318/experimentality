@@ -12,6 +12,8 @@ export class ToolbarComponent implements OnInit {
 
   countCart = 0;
 
+  showCart = false;
+
   cartObserver: any;
 
   constructor(private cartService: CartService) {}
@@ -22,7 +24,7 @@ export class ToolbarComponent implements OnInit {
 
   ngOnDestroy(): void {
     if (this.cartObserver) {
-      this.cartObserver.unsuscribe();
+      this.cartObserver.unsubscribe();
     }
   }
 
@@ -39,5 +41,9 @@ export class ToolbarComponent implements OnInit {
 
   getCountCart(cart: product[]) {
     this.countCart = cart.length;
+  }
+
+  setShowCart(val: boolean) {
+    this.showCart = val;
   }
 }

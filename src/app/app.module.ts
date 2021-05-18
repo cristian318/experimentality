@@ -16,6 +16,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 
 import { SwiperModule } from 'swiper/angular';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SwiperModule } from 'swiper/angular';
     MostWantedProductsComponent,
     SearchComponent,
     SearchInputComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
